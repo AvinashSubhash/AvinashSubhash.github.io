@@ -12,8 +12,11 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/dist/css/styles.css" rel="stylesheet" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Core theme CSS -->
+        <link rel="stylesheet" href="dist/css/styles-clean.css">
+        <link rel="stylesheet" href="dist/css/pages.css">
     </head> 
     <body id="page-top">
         <!-- Navigation-->
@@ -22,278 +25,321 @@
                 <a class="navbar-brand" href="#page-top">kingaiva</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Explore
-                    <!--<i class="fas fa-bars"></i>-->
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <!--<li class="nav-item"><anav-link" href="#about"><b>Who am I ?</b></a></li>-->
-                        <li class="nav-item"><a c class="nav-link" href="/tekpeek"><b>TekPeek - Blogs</b></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/tekpeek"><b>TekPeek - Blogs</b></a></li>
                         <li class="nav-item"><a class="nav-link" href="/stockflow"><b>StockFlow</b></a></li>
-                        <li class="nav-item"><a c class="nav-link" href="#pages"><b>Pages</b></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pages"><b>Pages</b></a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects"><b>Projects</b></a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact"><b>Connect with me</b></a></li>
-                        <!--<li class="nav-item"><a class="nav-link" href="/dist/vkt/vkt.html"><b>Viktor</b></a></li>-->
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0">Avinash S</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to my personal webpage!</h2>
-                        <a class="btn btn-primary" href="#about">Let's go!</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Hi, I'm Avinash ! </h2>
-                        <p class="text-white-50">
-                            An enthusiastic computer science student with interests in Operating Systems, Competetive Programming and Machine Learning. I am a passionate developer with expertise in systems, DevOps, and innovative tech solutions. Currently, I work as a DevOps engineer at Oracle, leveraging my skills to build scalable and efficient systems.
-                            My journey in technology has been fueled by curiosity and a drive to make impactful contributions. Whether it's exploring storage systems, contributing to open-source projects, or crafting technical blogs, I thrive at the cutting edge of development and learning. I believe in continuous learning and growth, both as a professional 
-                            and as an individual. Whether it's exploring new tools, contributing to open-source projects, or sharing insights through blogs, I aim to inspire others and contribute to the broader tech community.
-
-                            <br><br>When I'm not immersed in coding or systems design, you'll find me exploring the latest tech trends, writing blogs to share my knowledge, or experimenting with tools and ideas that push the boundaries of innovation.
-                        </p>
-                    </div>
-                </div>
-                <img class="img-fluid" src="/dist/assets/fixed_img/avinash.jpg" alt="..." />
-            </div>
-        </section>
-        <br><br><br><br><br><br>
-
-        <!-- My pages -->
-        <div class="container">
-        <h1 class="text-center mb-4" id="pages">My Pages</h1>
-        <hr class="my-5" style="width:90%; margin:auto; height: 5px; color: #000000">
-        <div class="container px-4 px-lg-5">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row justify-content-center">
         
-                            <div class="col-lg-3 col-md-6">
-                                <article class="post-grid mb-5 text-center">
-                                    <a class="post-thumb mb-4 d-block" href="https://avinashsubhash.github.io/tekpeek">
-                                        <img src="/dist/assets/fixed_img/tekpeek-transparent-small.png" alt="" class="img-fluid w-50">
-                                    </a>
-                                    <span class="cat-name text-color font-extra text-sm letter-spacing-1">Explore</span>
-                                    <h3 class="post-title mt-1"><a class="text-decoration-none" href="https://avinashsubhash.github.io/tekpeek">TekPeek - Blogs</a></h3>
-                                    <span class="text-muted letter-spacing font-sm">Explore TekPeek: My personal blog site</span>
-                                </article>
+        <!-- Compact Hero with Side-by-Side Layout -->
+        <section class="hero-section" id="page-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content">
+                            <h1 class="hero-title mb-4">Avinash S</h1>
+                            
+                            <!-- Mobile Image (hidden on desktop) -->
+                            <div class="hero-image-container text-center mobile-only mb-4">
+                                <img class="hero-image" src="/dist/assets/fixed_img/avinash.jpg" alt="Avinash S" />
                             </div>
                             
-                            <div class="col-lg-3 col-md-6">
-                                <article class="post-grid mb-5 text-center">
-                                    <a class="post-thumb mb-4 d-block" href="https://medium.com/@kingaiva">
-                                        <img src="/dist/assets/fixed_img/medium.png" alt="" class="img-fluid w-50">
-                                    </a>
-                                    <span class="cat-name text-color font-sm font-extra letter-spacing">Medium.com</span>
-                                    <h3 class="post-title mt-1"><a class="text-decoration-none" href="https://medium.com/@kingaiva">My Medium Page</a></h3>
-                                    <span class="text-muted letter-spacing font-sm">Take a look at my medium page @kingaiva</span>
-                                </article>
+                            <h2 class="hero-subtitle mb-4">DevOps Engineer at Oracle</h2>
+                            <p class="hero-description mb-4">
+                                An enthusiastic computer science student with interests in Operating Systems, Competitive Programming and Machine Learning. I am a passionate developer with expertise in systems, DevOps, and innovative tech solutions.
+                            </p>
+                            <p class="hero-description mb-5">
+                                My journey in technology has been fueled by curiosity and a drive to make impactful contributions. Whether it's exploring storage systems, contributing to open-source projects, or crafting technical blogs, I thrive at the cutting edge of development and learning.
+                            </p>
+                            <div class="hero-buttons">
+                                <a class="btn btn-primary me-3" href="#projects">View Projects</a>
+                                <a class="btn btn-outline-light" href="#contact">Get in Touch</a>
                             </div>
-
-
-                            <div class="col-lg-3 col-md-6 align-items-center">
-                                <article class="post-grid mb-5 text-center">
-                                    <a class="post-thumb mb-4 d-block" href="maintainance-writes.html">
-                                        <img src="/dist/assets/fixed_img/writes.png" alt="" class="img-fluid w-50">
-                                    </a>
-                                    <span class=" cat-name text-color font-sm font-extra letter-spacing">Hobby</span>
-                                    <h3 class="post-title mt-1"><a class="text-decoration-none" href="maintainance-writes.html">Avinash Writes!</a></h3>
-                        
-                                    <span class="text-muted letter-spacing font-sm">Coming Soon ...</span>
-                                    
-                                </article>
-                            </div>
-                            <!-- You are a smart human! Here is a secret link ;-) => https://avinashsubhash.github.io/dist/vkt/vkt.html  -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <!-- Desktop Image (hidden on mobile) -->
+                        <div class="hero-image-container text-center desktop-only">
+                            <img class="hero-image" src="/dist/assets/fixed_img/avinash.jpg" alt="Avinash S" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-    
+        </section>
 
-
-    <br>
-        <!-- Projects-->
-        <section class="projects-section bg-light container px-4 px-lg-5" id="projects">
+        <!-- My pages -->
+        <section class="pages-section" id="pages">
             <div class="container px-4 px-lg-5">
-                <h1 class="text-center mb-4">Projects</h1>
-                <hr class="my-5" style="width:90%; margin:auto; height: 5px; color: #000000">
-                <br><br>
-
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/AvinashSubhash/TubeStore"><img class="img-fluid mb-3 mb-lg-0" src="/dist/assets/fixed_img/tubestore.png" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>TubeStore</h4>
-                            <p class="text-black-50 mb-0">A TUI based python tool to convert any data to video format (For using youtube as a storage medium).</p>
-                        </div>
-                    </div>
-                </div>
-                <br><br><br>
-
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center" id="cleansweep">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/AvinashSubhash/CleanSweep"><img class="img-fluid mb-3 mb-lg-0" src="/dist/assets/fixed_img/cleansweep-small.png" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>CleanSweep</h4>
-                            <p class="text-black-50 mb-0">A TUI based tool to clean system cache and other copies</p>
-                        </div>
-                    </div>
-                </div>
-                <br><br><br>
-
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/AvinashSubhash/TekPeek-django"><img class="img-fluid mb-3 mb-lg-0" src="/dist/assets/fixed_img/tekpeek-transparent-small.png" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>TekPeek</h4>
-                            <p class="text-black-50 mb-0">A Tech-blog Website made out of Django</p>
-                        </div>
-                    </div>
-                </div>
-                <br><br><br>
-
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/Delhi-Metro-Planner/Metro-Planner"><img class="img-fluid mb-3 mb-lg-0" src="dist/assets/fixed_img/delhi-metro-planner.png" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Delhi Metro Travel Planner</h4>
-                            <p class="text-black-50 mb-0">Ever got confused which line to take when you have multiple ways to reach? Well, we have a soltion for that . .</p>
-                        </div>
-                    </div>
-                </div>
-                <br><br><br>
-                <!-- Featured Project Second Row -->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/AvinashSubhash/bugtracker-cli"><img class="img-fluid mb-3 mb-lg-0" src="dist/assets/fixed_img/laboratory online logo template social media illustration.png" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>bugtracker-cli</h4>
-                            <p class="text-black-50 mb-0"> A command line based basic bugtracker implemented in python along withsqlite3 for database.</p>
-                        </div>
-                    </div>
-                </div>
-                <br><br><br>
-                <!-- Featured Project 3rd Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/AvinashSubhash/Distributed-Naive-Bayes-Classifier"><img class="img-fluid mb-3 mb-lg-0" src="dist/assets/fixed_img/naive-bayes.png" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Distributed NBC</h4>
-                            <p class="text-black-50 mb-0">Nothing much, just a distributed version of the classic naive bayes classifier ;-)</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Featured Project 4th Row-->
-                <br><br><br>
-                <!-- Featured Project 3rd Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><a href="https://github.com/AvinashSubhash/Power-Pass"><img class="img-fluid mb-3 mb-lg-0" src="dist/assets/fixed_img/Power-Pass.jpg" alt="..." /></a></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Power Pass</h4>
-                        </div><p class="text-black-50 mb-0">Need a complicated password ? But scared of forgetting the random generated passwords ? Well, here I am . . .</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project One Row
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="dist/assets/img/demo-image-01.jpg" alt="..." /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Misty</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                    <hr class="d-none d-lg-block mb-0 ms-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center mb-5">
+                    <h1 class="pages-title">My Pages</h1>
+                    <div class="pages-divider"></div>
                 </div>
                 
-                <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="dist/assets/img/demo-image-02.jpg" alt="..." /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Mountains</h4>
-                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                                    <hr class="d-none d-lg-block mb-0 me-0" />
-                                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="page-card">
+                            <div class="page-card-image">
+                                <a href="https://avinashsubhash.github.io/tekpeek">
+                                    <img src="/dist/assets/fixed_img/tekpeek-transparent-small.png" alt="TekPeek" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="page-card-content">
+                                <span class="page-category">Explore</span>
+                                <h3 class="page-title">
+                                    <a href="https://avinashsubhash.github.io/tekpeek">TekPeek - Blogs</a>
+                                </h3>
+                                <p class="page-description">Explore TekPeek: My personal blog site</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="page-card">
+                            <div class="page-card-image">
+                                <a href="https://medium.com/@kingaiva">
+                                    <img src="/dist/assets/fixed_img/medium.png" alt="Medium" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="page-card-content">
+                                <span class="page-category">Medium.com</span>
+                                <h3 class="page-title">
+                                    <a href="https://medium.com/@kingaiva">My Medium Page</a>
+                                </h3>
+                                <p class="page-description">Take a look at my medium page @kingaiva</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="page-card">
+                            <div class="page-card-image">
+                                <a href="maintainance-writes.html">
+                                    <img src="/dist/assets/fixed_img/writes.png" alt="Writes" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="page-card-content">
+                                <span class="page-category">Hobby</span>
+                                <h3 class="page-title">
+                                    <a href="maintainance-writes.html">Avinash Writes!</a>
+                                </h3>
+                                <p class="page-description">Coming Soon ...</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        -->
+        </section>
+    
+        <!-- Projects-->
+        <section class="projects-section" id="projects">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center mb-5">
+                    <h1 class="projects-title">Projects</h1>
+                    <div class="projects-divider"></div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/AvinashSubhash/TubeStore">
+                                    <img src="/dist/assets/fixed_img/tubestore.png" alt="TubeStore" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">Python Tool</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/AvinashSubhash/TubeStore">TubeStore</a>
+                                </h3>
+                                <p class="project-description">A TUI based python tool to convert any data to video format (For using youtube as a storage medium).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/AvinashSubhash/CleanSweep">
+                                    <img src="/dist/assets/fixed_img/cleansweep-small.png" alt="CleanSweep" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">System Tool</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/AvinashSubhash/CleanSweep">CleanSweep</a>
+                                </h3>
+                                <p class="project-description">A TUI based tool to clean system cache and other copies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/AvinashSubhash/TekPeek-django">
+                                    <img src="/dist/assets/fixed_img/tekpeek-transparent-small.png" alt="TekPeek" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">Web App</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/AvinashSubhash/TekPeek-django">TekPeek</a>
+                                </h3>
+                                <p class="project-description">A Tech-blog Website made out of Django</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/Delhi-Metro-Planner/Metro-Planner">
+                                    <img src="dist/assets/fixed_img/delhi-metro-planner.png" alt="Delhi Metro Planner" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">Travel App</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/Delhi-Metro-Planner/Metro-Planner">Delhi Metro Travel Planner</a>
+                                </h3>
+                                <p class="project-description">Ever got confused which line to take when you have multiple ways to reach? Well, we have a solution for that.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/AvinashSubhash/bugtracker-cli">
+                                    <img src="dist/assets/fixed_img/laboratory online logo template social media illustration.png" alt="BugTracker CLI" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">CLI Tool</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/AvinashSubhash/bugtracker-cli">bugtracker-cli</a>
+                                </h3>
+                                <p class="project-description">A command line based basic bugtracker implemented in python along with sqlite3 for database.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/AvinashSubhash/Distributed-Naive-Bayes-Classifier">
+                                    <img src="dist/assets/fixed_img/naive-bayes.png" alt="Distributed NBC" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">ML Project</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/AvinashSubhash/Distributed-Naive-Bayes-Classifier">Distributed NBC</a>
+                                </h3>
+                                <p class="project-description">Nothing much, just a distributed version of the classic naive bayes classifier ;-)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+                        <div class="project-card">
+                            <div class="project-card-image">
+                                <a href="https://github.com/AvinashSubhash/Power-Pass">
+                                    <img src="dist/assets/fixed_img/Power-Pass.jpg" alt="Power Pass" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="project-card-content">
+                                <span class="project-category">Security Tool</span>
+                                <h3 class="project-title">
+                                    <a href="https://github.com/AvinashSubhash/Power-Pass">Power Pass</a>
+                                </h3>
+                                <p class="project-description">Need a complicated password? But scared of forgetting the random generated passwords? Well, here I am.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- Signup-->
 
         <!-- Contact-->
-        <section class="contact-section bg-black" id="contact">
+        <section class="contact-section" id="contact">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="m-0">Where am I ?</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">Bangalore, India</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="m-0">Email</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a class="text-decoration-none" href="#!">avinashsubhash19@gmail.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="m-0">Phone</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">+91 XXXXXXXXXX</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center mb-5">
+                    <h1 class="contact-title">Connect with Me</h1>
+                    <div class="contact-divider"></div>
                 </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://www.instagram.com/kingaiva/"><i class="fab fa-instagram"></i></a>
-                    <a class="mx-2" href="https://www.linkedin.com/in/avinash-s-07551a1a0/"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="mx-2" href="https://github.com/AvinashSubhash"><i class="fab fa-github"></i></a>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="contact-category">Location</span>
+                                <h3 class="contact-title-card">Where am I?</h3>
+                                <p class="contact-description">Bangalore, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="contact-category">Email</span>
+                                <h3 class="contact-title-card">Get in Touch</h3>
+                                <p class="contact-description">
+                                    <a href="mailto:avinashsubhash19@gmail.com">avinashsubhash19@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="contact-category">Social</span>
+                                <h3 class="contact-title-card">Follow Me</h3>
+                                <div class="social-links-inline">
+                                    <a class="social-link-inline" href="https://www.instagram.com/kingaiva/" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a class="social-link-inline" href="https://www.linkedin.com/in/avinash-s-07551a1a0/" title="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a class="social-link-inline" href="https://github.com/AvinashSubhash" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">&copy Copyright-free, take it if you like it ;-) - 2022</div></footer>
+        <footer class="footer bg-black small text-center text-white-50">
+            <div class="container px-4 px-lg-5">
+                &copy; 2024 Avinash S. All rights reserved. Feel free to get inspired by this design!
+            </div>
+        </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="dist/js/scripts.js"></script>
+        <script src="js/navbar.js"></script>
     </body>
 </html>
