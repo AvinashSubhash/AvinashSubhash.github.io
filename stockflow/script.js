@@ -84,12 +84,12 @@ function formatFullAnalysis(data) {
                 </div>
             `;
         } else {
+            const formattedKey = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
             html += `
                 <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <strong>${key}:</strong> ${formatValue(value, key)}
-                        </div>
+                    <div class="data-item">
+                        <div class="data-label">${formattedKey}</div>
+                        <div class="data-content">${formatValue(value, key)}</div>
                     </div>
                 </div>
             `;
@@ -118,12 +118,12 @@ function formatIndividualAnalysis(data, analysisType) {
                 </div>
             `;
         } else {
+            const formattedKey = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
             html += `
                 <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <strong>${key}:</strong> ${formatValue(value, key)}
-                        </div>
+                    <div class="data-item">
+                        <div class="data-label">${formattedKey}</div>
+                        <div class="data-content">${formatValue(value, key)}</div>
                     </div>
                 </div>
             `;
@@ -179,15 +179,16 @@ function formatArrayData(data, key) {
 }
 
 function formatObjectData(data, key) {
-    let html = '<div class="row">';
+    let html = '<div class="data-grid">';
     
     for (const [objKey, objValue] of Object.entries(data)) {
+        const formattedKey = objKey.charAt(0).toUpperCase() + objKey.slice(1).replace(/([A-Z])/g, ' $1');
+        const formattedValue = formatValue(objValue, objKey);
+        
         html += `
-            <div class="col-md-6 mb-2">
-                <div class="d-flex justify-content-between align-items-center p-2 border rounded">
-                    <span class="fw-bold">${objKey}:</span>
-                    <span>${formatValue(objValue, objKey)}</span>
-                </div>
+            <div class="data-item">
+                <div class="data-label">${formattedKey}</div>
+                <div class="data-content">${formattedValue}</div>
             </div>
         `;
     }
@@ -205,12 +206,25 @@ function formatValue(value, key) {
         const boolValue = value === true || value === 'true';
         if (key.toLowerCase().includes('buy')) {
             return boolValue ? 
-                '<span class="badge bg-success"><i class="bi bi-check-circle"></i> BUY</span>' : 
-                '<span class="badge bg-danger"><i class="bi bi-x-circle"></i> SELL</span>';
+                '<div class="signal-badge buy"><i class="bi bi-arrow-up-circle-fill"></i> BUY SIGNAL</div>' : 
+                '<div class="signal-badge sell"><i class="bi bi-arrow-down-circle-fill"></i> SELL SIGNAL</div>';
+        } else if (key.toLowerCase().includes('signal')) {
+            const signalValue = String(value).toLowerCase();
+            if (signalValue.includes('buy')) {
+                return '<div class="signal-badge buy"><i class="bi bi-arrow-up-circle-fill"></i> BUY SIGNAL</div>';
+            } else if (signalValue.includes('sell')) {
+                return '<div class="signal-badge sell"><i class="bi bi-arrow-down-circle-fill"></i> SELL SIGNAL</div>';
+            } else if (signalValue.includes('hold') || signalValue.includes('neutral')) {
+                return '<div class="signal-badge hold"><i class="bi bi-dash-circle-fill"></i> HOLD SIGNAL</div>';
+            } else {
+                return boolValue ? 
+                    '<div class="signal-badge buy"><i class="bi bi-check-circle-fill"></i> POSITIVE</div>' : 
+                    '<div class="signal-badge sell"><i class="bi bi-x-circle-fill"></i> NEGATIVE</div>';
+            }
         } else {
             return boolValue ? 
-                '<span class="badge bg-success">True</span>' : 
-                '<span class="badge bg-danger">False</span>';
+                '<div class="signal-badge buy"><i class="bi bi-check-circle-fill"></i> TRUE</div>' : 
+                '<div class="signal-badge sell"><i class="bi bi-x-circle-fill"></i> FALSE</div>';
         }
     }
     
@@ -225,6 +239,16 @@ function formatValue(value, key) {
     }
 
     if (typeof value === 'string') {
+        // Check for signal-related strings
+        const signalValue = value.toLowerCase();
+        if (signalValue.includes('buy')) {
+            return '<div class="signal-badge buy"><i class="bi bi-arrow-up-circle-fill"></i> BUY SIGNAL</div>';
+        } else if (signalValue.includes('sell')) {
+            return '<div class="signal-badge sell"><i class="bi bi-arrow-down-circle-fill"></i> SELL SIGNAL</div>';
+        } else if (signalValue.includes('hold') || signalValue.includes('neutral')) {
+            return '<div class="signal-badge hold"><i class="bi bi-dash-circle-fill"></i> HOLD SIGNAL</div>';
+        }
+        
         if (value.length > 50) {
             return `<span title="${value}">${value.substring(0, 50)}...</span>`;
         }
