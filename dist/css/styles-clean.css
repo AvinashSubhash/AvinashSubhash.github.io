@@ -155,18 +155,32 @@ body {
 }
 
 .navbar-collapse {
-  display: flex !important;
-  align-items: center !important;
-  background: none !important;
-  border: none !important;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-collapse.collapse {
-  display: flex !important;
+@media (min-width: 992px) {
+  .navbar-collapse {
+    display: flex !important;
+    align-items: center !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
 }
 
-.navbar-collapse.collapsing {
-  display: flex !important;
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .navbar-collapse.show {
+    max-height: 500px;
+  }
 }
 
 .ms-auto {
@@ -305,7 +319,11 @@ body {
 }
 
 .hero-buttons {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  display: block;
+  gap: 0;
+  flex-wrap: unset;
+  justify-content: unset;
 }
 
 .hero-buttons .btn {
@@ -772,22 +790,15 @@ body {
   }
   
   .navbar-collapse {
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    background: white !important;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 0 !important;
-    z-index: 1050 !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
-    transition: max-height 0.3s ease !important;
-    border: 1px solid #f0f0f0 !important;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
   }
   
   .navbar-collapse.show {
-    max-height: 250px !important;
+    max-height: 500px;
+    opacity: 1;
   }
   
   .navbar-nav {
