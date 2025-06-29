@@ -10,7 +10,7 @@ document.getElementById('stockForm').addEventListener('submit', async function(e
     document.getElementById('messages').innerHTML = '';
     
     try {
-        let url = `https://tekpeek.duckdns.org/${stockId}`;
+        let url = `https://tekpeek.duckdns.org/api/${stockId}`;
         const params = new URLSearchParams({
             interval: interval
         });
