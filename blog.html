@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Professional Blog - Legal, Tax, Investing, Estate Planning" />
+    <meta name="author" content="Avinash S" />
+    <title>The Manual | Blog</title>
+    <link rel="icon" type="image/x-icon" href="dist/assets/tpw.svg"/>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        background: #fff;
+        color: #222;
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      .header {
+        width: 100%;
+        padding: 2.5rem 0 1.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+        text-align: left;
+        background: #fff;
+      }
+      .header-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.5rem 0;
+        color: #181c32;
+      }
+      .header-desc {
+        font-size: 1.1rem;
+        color: #6b7280;
+        max-width: 520px;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        gap: 3rem;
+      }
+      .sidebar {
+        min-width: 220px;
+        max-width: 220px;
+        padding-top: 0.5rem;
+      }
+      .sidebar-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #181c32;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.01em;
+      }
+      .sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .sidebar-list li {
+        margin-bottom: 0.7rem;
+      }
+      .sidebar-link {
+        color: #3b5bdb;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: color 0.2s;
+        border-radius: 6px;
+        padding: 0.2rem 0.5rem;
+        display: block;
+      }
+      .sidebar-link.active, .sidebar-link:hover {
+        background: #f3f6fd;
+        color: #1c3faa;
+      }
+      .main {
+        flex: 1;
+        min-width: 0;
+      }
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #181c32;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.01em;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 2rem;
+      }
+      .blog-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(24,28,50,0.07);
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 160px;
+        transition: box-shadow 0.18s;
+        border: 1px solid #f0f0f0;
+      }
+      .blog-card:hover {
+        box-shadow: 0 6px 24px rgba(24,28,50,0.13);
+        border-color: #e0e7ef;
+      }
+      .blog-card-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #1c3faa;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .blog-card-desc {
+        color: #6b7280;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .footer {
+        width: 100%;
+        border-top: 1px solid #f0f0f0;
+        text-align: center;
+        color: #a0aec0;
+        font-size: 0.95rem;
+        padding: 2rem 0 1rem 0;
+        margin-top: 3rem;
+        background: #fff;
+      }
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          gap: 2rem;
+        }
+        .sidebar {
+          max-width: 100%;
+          min-width: 0;
+          display: flex;
+          flex-direction: row;
+          gap: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #f0f0f0;
+          margin-bottom: 2rem;
+        }
+        .sidebar-title {
+          display: none;
+        }
+        .sidebar-list {
+          display: flex;
+          flex-direction: row;
+          gap: 1.5rem;
+        }
+        .sidebar-list li {
+          margin-bottom: 0;
+        }
+      }
+      @media (max-width: 600px) {
+        .header-title {
+          font-size: 1.5rem;
+        }
+        .container {
+          padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+        }
+        .section-title {
+          font-size: 1.1rem;
+        }
+        .blog-card {
+          padding: 1.2rem 0.8rem 1rem 0.8rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header class="header">
+      <div class="header-title">the Manual</div>
+      <div class="header-desc">The curated library of wealth planning resources for entrepreneurs, professionals, and retirees. Optimize your finances, master tax strategies, and plan your legacy with expert insights.</div>
+    </header>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-title">Collections</div>
+        <ul class="sidebar-list">
+          <li><a class="sidebar-link active" href="#">Attorneys</a></li>
+          <li><a class="sidebar-link" href="#">Early-Stage Founder</a></li>
+          <li><a class="sidebar-link" href="#">Startup Stories</a></li>
+          <li><a class="sidebar-link" href="#">Busy Professionals</a></li>
+          <li><a class="sidebar-link" href="#">Retirement</a></li>
+        </ul>
+      </aside>
+      <main class="main">
+        <div class="section-title">Partners at Law Firms</div>
+        <div class="card-grid">
+          <div class="blog-card">
+            <div class="blog-card-title">Navigating the Financial Transition from Associate to Partner</div>
+            <div class="blog-card-desc">Learn strategies for managing cash flow, planning for taxes, and building long-term wealth in your new partnership role.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">Retirement Planning Strategies for Lawyers</div>
+            <div class="blog-card-desc">Maximize your retirement savings as a high-earning lawyer with advanced strategies to save more, minimize taxes, and plan for your dream retirement.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">Mastering Estate Planning in Retirement</div>
+            <div class="blog-card-desc">Implement strategies to protect your wealth and ensure your legacy lives on, tailored for high-net-worth individuals.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">Common Misconceptions About Schedule K-1s</div>
+            <div class="blog-card-desc">Unpack the most common misunderstandings about Schedule K-1s and how to avoid costly tax mistakes as an investor or partner.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">Tax-Smart Retirement Income Planning</div>
+            <div class="blog-card-desc">Strategies for a worry-free retirement, including tax allocation and optimization for working professionals.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">Top 5 Tips for a Successful 1031 Exchange</div>
+            <div class="blog-card-desc">Maximize your investment and defer taxes with these essential tips for a successful 1031 exchange.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">Charitable Remainder Trusts</div>
+            <div class="blog-card-desc">Explore how charitable remainder trusts can help you achieve your philanthropic goals while optimizing your estate plan.</div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-title">The Retiree's Guide to Managing Health Insurance Costs</div>
+            <div class="blog-card-desc">Strategies for a healthier, wealthier future: managing health insurance costs in retirement and beyond.</div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      &copy; 2024 The Manual. Not legal, tax, or investment advice.
+    </footer>
+</body>
+</html> 
