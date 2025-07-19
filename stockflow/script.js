@@ -259,11 +259,19 @@ function formatValue(value, key) {
 }
 
 function showMessage(message, type) {
-    const messagesDiv = document.getElementById('messages');
-    const className = type === 'error' ? 'error-message' : 'success-message';
+    // Show notification at top right
+    const notificationArea = document.getElementById('notificationArea');
+    if (!notificationArea) return;
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
     const icon = type === 'error' ? '<i class="bi bi-exclamation-triangle-fill me-2"></i>' : '<i class="bi bi-check-circle-fill me-2"></i>';
-    
-    messagesDiv.innerHTML = `<div class="${className}">${icon}${message}</div>`;
+    notification.innerHTML = `${icon}${message}`;
+    notificationArea.appendChild(notification);
+    // Auto-dismiss after 4s
+    setTimeout(() => {
+        notification.style.animation = 'fadeOutSlideUp 0.4s forwards';
+        setTimeout(() => notification.remove(), 400);
+    }, 4000);
 }
 
 document.getElementById('stockId').addEventListener('input', function(e) {
@@ -326,7 +334,7 @@ async function setMaintenanceMode(enable) {
     const mode = enable ? 'on' : 'off';
     try {
         const res = await fetch(`https://tekpeek.duckdns.org/api/admin/maintenance/${mode}`, {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'X-API-Key': apiKey,
                 'Content-Type': 'application/json'
@@ -345,4 +353,43 @@ async function setMaintenanceMode(enable) {
     } catch (err) {
         showMessage('Network error updating maintenance mode.', 'error');
     }
+} 
+
+const triggerCronBtn = document.getElementById('triggerCronBtn');
+const cronStatusText = document.getElementById('cronStatusText');
+
+if (triggerCronBtn) {
+    triggerCronBtn.addEventListener('click', async function() {
+        if (!apiKey) {
+            apiKey = prompt('Enter your admin API key:');
+            if (!apiKey) {
+                showMessage('API key is required to perform this action.', 'error');
+                return;
+            }
+        }
+        cronStatusText.textContent = 'Triggering cron job...';
+        try {
+            const res = await fetch('https://tekpeek.duckdns.org/api/admin/trigger-cron', {
+                method: 'GET',
+                headers: {
+                    'X-API-Key': apiKey
+                }
+            });
+            const data = await res.json();
+            if (res.ok) {
+                cronStatusText.textContent = 'Cron job triggered successfully.';
+                showMessage('Cron job triggered successfully.', 'success');
+            } else if (res.status === 401) {
+                apiKey = null;
+                cronStatusText.textContent = 'Unauthorized: Invalid API key.';
+                showMessage('Unauthorized: Invalid API key. Please try again.', 'error');
+            } else {
+                cronStatusText.textContent = data.error || 'Failed to trigger cron job.';
+                showMessage(data.error || 'Failed to trigger cron job.', 'error');
+            }
+        } catch (err) {
+            cronStatusText.textContent = 'Network error triggering cron job.';
+            showMessage('Network error triggering cron job.', 'error');
+        }
+    });
 } 
