@@ -298,3 +298,51 @@ themeToggle.addEventListener('click', function() {
         localStorage.setItem('theme', 'dark');
     }
 }); 
+
+// === Maintenance Mode Button Logic ===
+const enableBtn = document.getElementById('enableMaintenanceBtn');
+const disableBtn = document.getElementById('disableMaintenanceBtn');
+const maintenanceStatusText = document.getElementById('maintenanceStatusText');
+
+let apiKey = null;
+
+if (enableBtn && disableBtn) {
+    enableBtn.addEventListener('click', function() {
+        setMaintenanceMode(true);
+    });
+    disableBtn.addEventListener('click', function() {
+        setMaintenanceMode(false);
+    });
+}
+
+async function setMaintenanceMode(enable) {
+    if (!apiKey) {
+        apiKey = prompt('Enter your admin API key:');
+        if (!apiKey) {
+            showMessage('API key is required to perform this action.', 'error');
+            return;
+        }
+    }
+    const mode = enable ? 'on' : 'off';
+    try {
+        const res = await fetch(`https://tekpeek.duckdns.org/api/admin/maintenance/${mode}`, {
+            method: 'POST',
+            headers: {
+                'X-API-Key': apiKey,
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await res.json();
+        if (res.ok) {
+            maintenanceStatusText.textContent = enable ? 'Maintenance mode is ENABLED' : 'Maintenance mode is DISABLED';
+            showMessage(`Maintenance mode ${enable ? 'enabled' : 'disabled'} successfully.`, 'success');
+        } else if (res.status === 401) {
+            apiKey = null; // Clear invalid key
+            showMessage('Unauthorized: Invalid API key. Please try again.', 'error');
+        } else {
+            showMessage(data.error || 'Failed to update maintenance mode.', 'error');
+        }
+    } catch (err) {
+        showMessage('Network error updating maintenance mode.', 'error');
+    }
+} 

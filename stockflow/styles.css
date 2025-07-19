@@ -941,3 +941,89 @@ body.dark-mode .data-content .fw-bold {
         font-size: 1rem;
     }
 } 
+
+/* ===== MAINTENANCE MODE CARD ===== */
+#maintenanceCard {
+    border-left: 6px solid var(--warning-500);
+    box-shadow: 0 2px 12px rgba(217, 119, 6, 0.08);
+    background: linear-gradient(90deg, #fffbe6 0%, #fff 100%);
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+#maintenanceCard .card-title {
+    color: var(--warning-600);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#maintenanceCard .form-check-input:checked {
+    background-color: var(--warning-500);
+    border-color: var(--warning-500);
+}
+#maintenanceCard .form-check-input {
+    width: 2.5em;
+    height: 1.3em;
+    cursor: pointer;
+}
+#maintenanceCard .form-check-label {
+    font-weight: 600;
+    margin-left: 0.5em;
+    color: var(--warning-600);
+    letter-spacing: 0.05em;
+}
+#maintenanceCard .form-text {
+    color: var(--warning-600);
+    font-size: 0.97em;
+    margin-top: 0.2em;
+}
+#maintenanceCard .d-flex.gap-2 > .btn {
+    min-width: 170px;
+    font-weight: 600;
+    font-size: 1em;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, background 0.2s;
+}
+#maintenanceCard .btn-warning {
+    color: #fff;
+    background: var(--warning-500);
+    border: none;
+}
+#maintenanceCard .btn-warning:hover {
+    background: var(--warning-600);
+    box-shadow: var(--shadow-md);
+}
+#maintenanceCard .btn-secondary {
+    background: var(--neutral-300);
+    color: var(--neutral-800);
+    border: none;
+}
+#maintenanceCard .btn-secondary:hover {
+    background: var(--neutral-400);
+    color: var(--neutral-900);
+    box-shadow: var(--shadow-md);
+}
+body.dark-mode #maintenanceCard {
+    background: linear-gradient(90deg, #2d2612 0%, #1e1e1e 100%);
+    border-left: 6px solid var(--warning-600);
+}
+body.dark-mode #maintenanceCard .card-title,
+body.dark-mode #maintenanceCard .form-check-label,
+body.dark-mode #maintenanceCard .form-text {
+    color: var(--warning-500);
+} 
+body.dark-mode #maintenanceCard .btn-warning {
+    background: var(--warning-600);
+    color: #fff;
+}
+body.dark-mode #maintenanceCard .btn-warning:hover {
+    background: var(--warning-500);
+}
+body.dark-mode #maintenanceCard .btn-secondary {
+    background: var(--neutral-700);
+    color: var(--neutral-100);
+}
+body.dark-mode #maintenanceCard .btn-secondary:hover {
+    background: var(--neutral-600);
+    color: #fff;
+} 
