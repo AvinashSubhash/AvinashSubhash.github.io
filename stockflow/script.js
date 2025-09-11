@@ -393,3 +393,43 @@ if (triggerCronBtn) {
         }
     });
 } 
+
+// === Trigger Kubernetes Snapshot (Admin) ===
+const triggerSnapshotBtn = document.getElementById('triggerSnapshotBtn');
+const snapshotStatusText = document.getElementById('snapshotStatusText');
+
+if (triggerSnapshotBtn) {
+    triggerSnapshotBtn.addEventListener('click', async function() {
+        if (!apiKey) {
+            apiKey = prompt('Enter your admin API key:');
+            if (!apiKey) {
+                showMessage('API key is required to perform this action.', 'error');
+                return;
+            }
+        }
+        if (snapshotStatusText) snapshotStatusText.textContent = 'Triggering Kubernetes snapshot...';
+        try {
+            const res = await fetch('https://tekpeek.duckdns.org/api/kubesnap/default', {
+                method: 'GET',
+                headers: {
+                    'X-API-Key': apiKey
+                }
+            });
+            const data = await res.json();
+            if (res.ok) {
+                if (snapshotStatusText) snapshotStatusText.textContent = 'Snapshot triggered successfully.';
+                showMessage('Kubernetes snapshot triggered successfully.', 'success');
+            } else if (res.status === 401) {
+                apiKey = null;
+                if (snapshotStatusText) snapshotStatusText.textContent = 'Unauthorized: Invalid API key.';
+                showMessage('Unauthorized: Invalid API key. Please try again.', 'error');
+            } else {
+                if (snapshotStatusText) snapshotStatusText.textContent = data.error || 'Failed to trigger snapshot.';
+                showMessage(data.error || 'Failed to trigger snapshot.', 'error');
+            }
+        } catch (err) {
+            if (snapshotStatusText) snapshotStatusText.textContent = 'Network error triggering snapshot.';
+            showMessage('Network error triggering snapshot.', 'error');
+        }
+    });
+}
