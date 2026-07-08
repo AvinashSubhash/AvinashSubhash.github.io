@@ -940,7 +940,7 @@ body.dark-mode .data-content .fw-bold {
     .data-content {
         font-size: 1rem;
     }
-} 
+}
 
 /* ===== MAINTENANCE MODE CARD ===== */
 #maintenanceCard {
@@ -983,6 +983,15 @@ body.dark-mode .data-content .fw-bold {
     font-size: 1em;
     box-shadow: var(--shadow-sm);
     transition: box-shadow 0.2s, background 0.2s;
+}
+@media (max-width: 576px) {
+    #maintenanceCard .d-flex.gap-2 {
+        width: 100%;
+        flex-direction: column;
+    }
+    #maintenanceCard .d-flex.gap-2 > .btn {
+        width: 100%;
+    }
 }
 #maintenanceCard .btn-warning {
     color: #fff;
@@ -1269,4 +1278,4 @@ body.dark-mode .admin-section-container .btn-primary:focus {
 body.dark-mode .admin-section-container .btn-primary:active {
     filter: brightness(0.97);
     transform: scale(0.98);
-} 
+}
