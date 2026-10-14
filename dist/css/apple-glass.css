@@ -152,6 +152,8 @@ body.dark-mode .btn-outline-light:hover {
   border-color: rgb(255 255 255 / 0.2) !important;
 }
 
+
+
 body.dark-mode .page-title a,
 body.dark-mode .project-title a,
 body.dark-mode .contact-title-card a,
@@ -204,6 +206,25 @@ body.dark-mode .theme-toggle-btn:hover {
   color: #ffffff !important;
   background: var(--color-primary) !important;
   border-color: var(--color-primary) !important;
+}
+
+/* Navbar-specific button overrides: blend seamlessly into the obsidian bar */
+body.dark-mode .navbar .btn-outline-light,
+body.dark-mode .navbar .theme-toggle-btn {
+  color: var(--color-text-muted) !important;
+  background: transparent !important;
+  border-color: rgb(255 255 255 / 0.1) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.dark-mode .navbar .btn-outline-light:hover,
+body.dark-mode .navbar .theme-toggle-btn:hover {
+  color: #ffffff !important;
+  background: rgb(255 255 255 / 0.08) !important;
+  border-color: rgb(255 255 255 / 0.2) !important;
+  box-shadow: none !important;
 }
 
 body.dark-mode .contact-description a {
@@ -1277,6 +1298,30 @@ select {
     background: var(--color-surface-strong);
     border: 1px solid var(--color-border-subtle);
     border-radius: 1rem;
+  }
+
+  body.dark-mode .navbar-collapse {
+    background: var(--color-surface-strong) !important;
+    border-color: var(--color-border-subtle) !important;
+  }
+
+  body.dark-mode .navbar-nav .nav-item {
+    border-color: var(--color-border-subtle) !important;
+  }
+
+  body.dark-mode .navbar-nav .nav-item:hover {
+    background: transparent !important;
+  }
+
+  body.dark-mode .navbar-nav .nav-link {
+    color: var(--color-text-muted) !important;
+    background: transparent !important;
+  }
+
+  body.dark-mode .navbar-nav .nav-link:hover,
+  body.dark-mode .navbar-nav .nav-link:focus {
+    color: #ffffff !important;
+    background: var(--color-primary-active) !important;
   }
 
   .hero-content {
